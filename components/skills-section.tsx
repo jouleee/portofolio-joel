@@ -9,30 +9,30 @@ export function SkillsSection() {
 
   const skillCategories = [
     {
-      category: "Frontend",
+      category: "Programming Languages",
       skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "TypeScript", level: 80 },
+        { name: "C", level: 90 },
+        { name: "PHP", level: 90 },
+        { name: "Javascript", level: 85 },
+        { name: "Java", level: 80 },
       ],
     },
     {
       category: "Backend",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "Laravel", level: 75 },
-        { name: "PostgreSQL", level: 70 },
+        { name: "Laravel", level: 90 },
+        { name: "Node.js", level: 80 },
+        { name: "MySQL", level: 90 },
+        { name: "REST API", level: 80 },
       ],
     },
     {
       category: "Tools & Others",
       skills: [
         { name: "Git", level: 90 },
-        { name: "Docker", level: 70 },
-        { name: "Postman", level: 85 },
-        { name: "Figma", level: 75 },
+        { name: "Figma", level: 85 },
+        { name: "VS Code", level: 80 },
+        { name: "Postman", level: 70 },
       ],
     },
   ]

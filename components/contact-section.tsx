@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Github, Linkedin, Mail, Send } from "lucide-react"
+import { Github, InstagramIcon, Linkedin, Mail, Send } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -36,10 +36,10 @@ export function ContactSection() {
       username: "@juliandwi",
     },
     {
-      icon: Mail,
-      label: "Email",
-      url: "mailto:julian.dsatrio@gmail.com",
-      username: "julian.dsatrio@gmail.com",
+      icon: InstagramIcon,
+      label: "Instagram",
+      url: "https://instagram.com/juliandwii",
+      username: "@juliandwii  ",
     },
   ]
 
@@ -147,7 +147,7 @@ export function ContactSection() {
 
       {/* Footer */}
       <div className="mt-24 pt-8 border-t border-border/30 text-center text-sm text-muted-foreground relative z-10">
-        <p>© 2025 Your Name. Built with Next.js and Tailwind CSS.</p>
+        <p>© 2025 codeJoel. Built with Next.js and Tailwind CSS.</p>
       </div>
     </section>
   )

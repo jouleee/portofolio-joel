@@ -7,8 +7,10 @@ import { Menu, X } from "lucide-react"
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
@@ -36,7 +38,7 @@ export function Navigation() {
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold text-primary hover:text-primary/80 transition-colors neon-text"
           >
-            {"<Joel/>"}
+            {"<codeJoel/>"}
           </button>
 
           {/* Desktop Navigation */}

@@ -11,9 +11,9 @@ export function OrganizationSection() {
 
   const organizations = [
     {
-      role: "President",
-      organization: "Computer Science Student Association",
-      period: "2023 - 2024",
+      role: "Head of Organization",
+      organization: "Keluarga Mahasiswa Komputer FPMIPA Universitas Pendidikan Indonesia",
+      period: "2025 - 2026",
       description: "Led a team of 50+ members in organizing technical workshops, hackathons, and community events. Managed budget and collaborated with industry partners.",
       achievements: [
         "Organized 5+ successful tech events",
@@ -23,9 +23,9 @@ export function OrganizationSection() {
       icon: "🎯",
     },
     {
-      role: "Vice President",
-      organization: "Programming Club",
-      period: "2022 - 2023",
+      role: "Staff for Interest and Talent Division",
+      organization: "Keluarga Mahasiswa Komputer FPMIPA Universitas Pendidikan Indonesia",
+      period: "2024 - 2025",
       description: "Coordinated weekly coding sessions and mentored junior members. Organized inter-university programming competitions.",
       achievements: [
         "Mentored 30+ students",
@@ -35,9 +35,9 @@ export function OrganizationSection() {
       icon: "💻",
     },
     {
-      role: "Event Coordinator",
-      organization: "Tech Conference Committee",
-      period: "2022",
+      role: "Staff for Interest and Talent Division",
+      organization: "Keluarga Mahasiswa FPMIPA Universitas Pendidikan Indonesia",
+      period: "2024 - 2025",
       description: "Managed logistics and coordinated with speakers for annual tech conference with 500+ attendees.",
       achievements: [
         "Coordinated 20+ speakers",
@@ -47,9 +47,57 @@ export function OrganizationSection() {
       icon: "🎪",
     },
     {
-      role: "Member",
-      organization: "Open Source Community",
-      period: "2021 - Present",
+      role: "Vice Chair of the Organizing Committee",
+      organization: "A-Storia : Annual Event by Computer Science Class of 2023",
+      period: "2023",
+      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      achievements: [
+        "Contributed to 10+ projects",
+        "Fixed 50+ issues",
+        "Helped onboard new contributors",
+      ],
+      icon: "🌟",
+    },
+    {
+      role: "Head of Supervisory Commission",
+      organization: "Majelis Perwakilan Kelas SMAN 1 Cisaat",
+      period: "2022",
+      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      achievements: [
+        "Contributed to 10+ projects",
+        "Fixed 50+ issues",
+        "Helped onboard new contributors",
+      ],
+      icon: "🌟",
+    },
+    {
+      role: "Treasurer",
+      organization: "Gerakan Pramuka SMAN 1 Cisaat",
+      period: "2022",
+      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      achievements: [
+        "Contributed to 10+ projects",
+        "Fixed 50+ issues",
+        "Helped onboard new contributors",
+      ],
+      icon: "🌟",
+    },
+    {
+      role: "Head of Information and Communication Division",
+      organization: "Organisasi Siswa Intra Sekolah SMPN 1 Cisaat",
+      period: "2018",
+      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      achievements: [
+        "Contributed to 10+ projects",
+        "Fixed 50+ issues",
+        "Helped onboard new contributors",
+      ],
+      icon: "🌟",
+    },
+    {
+      role: "Secretary",
+      organization: "Gerakan Pramuka SMPN 1 Cisaat",
+      period: "2018",
       description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
       achievements: [
         "Contributed to 10+ projects",
