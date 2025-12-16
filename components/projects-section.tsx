@@ -72,7 +72,7 @@ export function ProjectsSection() {
 
   const ProjectCard = ({ project }: { project: (typeof softwareProjects)[0] }) => (
     <Card className="overflow-hidden glass-card hover:neon-border transition-all duration-300 group relative">
-      <div className="relative h-48 overflow-hidden bg-secondary/20">
+      <div className="relative h-40 sm:h-48 overflow-hidden bg-secondary/20">
         <img
           src={project.image || "/placeholder.svg"}
           alt={project.title}
@@ -110,27 +110,27 @@ export function ProjectsSection() {
   )
 
   return (
-    <section id="projects" className="py-24 px-4 relative">
+    <section id="projects" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="space-y-20">
+        <div className="space-y-12 sm:space-y-16 lg:space-y-20">
           {/* Header */}
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-balance">Featured Projects</h2>
+          <div className="text-center space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Featured Projects</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
               A curated collection of my work across software development, design, and AI/ML domains.
             </p>
           </div>
 
-          <div className="space-y-8">
-            <div className="space-y-3">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary">Software</h3>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-transparent rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]" />
-              <p className="text-muted-foreground">Full-stack web applications and scalable solutions</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-2 sm:space-y-3">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary">Software</h3>
+              <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-primary to-transparent rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]" />
+              <p className="text-sm sm:text-base text-muted-foreground">Full-stack web applications and scalable solutions</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {softwareProjects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}

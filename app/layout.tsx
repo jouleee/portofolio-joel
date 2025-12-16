@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   title: "Portfolio | Computer Science Student",
   description: "Personal portfolio showcasing web development projects and technical skills",
   generator: "v0.app",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   icons: {
     icon: [
       {

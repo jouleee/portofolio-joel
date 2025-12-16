@@ -311,3 +311,49 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .glass-card {
+    backdrop-filter: blur(8px);
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 8px oklch(0.65 0.28 265 / 0.4), 0 0 15px oklch(0.65 0.28 265 / 0.2);
+  }
+  
+  .grid-pattern {
+    background-size: 30px 30px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-pattern {
+    background-size: 40px 40px;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Touch-friendly interactive elements */
+@media (hover: none) and (pointer: coarse) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Optimize animations for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

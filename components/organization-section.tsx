@@ -126,21 +126,21 @@ export function OrganizationSection() {
   }, [])
 
   return (
-    <section id="organization" className="py-20 px-4 relative" ref={sectionRef}>
+    <section id="organization" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative" ref={sectionRef}>
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold">Organization Experience</h2>
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Organizations & Communities</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Leadership roles and community involvement that shaped my professional growth
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {organizations.map((org, index) => (
             <Card
               key={index}
-              className={`p-6 glass-card hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 border-primary/20 hover:neon-border group relative overflow-hidden ${
+              className={`p-4 sm:p-6 glass-card hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 border-primary/20 hover:neon-border group relative overflow-hidden ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
@@ -148,45 +148,45 @@ export function OrganizationSection() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 text-8xl opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+              <div className="absolute top-0 right-0 text-6xl sm:text-8xl opacity-5 group-hover:opacity-10 transition-opacity duration-500">
                 {org.icon}
               </div>
 
-              <div className="relative space-y-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-3xl">{org.icon}</span>
-                      <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+              <div className="relative space-y-3 sm:space-y-4">
+                <div className="flex items-start justify-between gap-2 sm:gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start gap-2 mb-2 flex-wrap">
+                      <span className="text-2xl sm:text-3xl">{org.icon}</span>
+                      <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm">
                         <Users className="w-3 h-3 mr-1" />
-                        {org.role}
+                        <span className="break-words">{org.role}</span>
                       </Badge>
                     </div>
-                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold group-hover:text-primary transition-colors break-words">
                       {org.organization}
                     </h3>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>{org.period}</span>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {org.description}
                 </p>
 
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Award className="w-4 h-4" />
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-primary">
+                    <Award className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                     <span>Key Achievements</span>
                   </div>
-                  <ul className="space-y-1.5 text-sm text-muted-foreground">
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-muted-foreground">
                     {org.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{achievement}</span>
+                        <span className="text-primary mt-0.5 flex-shrink-0">•</span>
+                        <span className="break-words">{achievement}</span>
                       </li>
                     ))}
                   </ul>

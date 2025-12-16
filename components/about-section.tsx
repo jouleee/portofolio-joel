@@ -22,20 +22,20 @@ export function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-24 px-4 relative">
+    <section id="about" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/10 to-transparent" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {/* Section Title */}
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-balance">About Me</h2>
+          <div className="text-center space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">About Me</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
           </div>
 
           {/* Main Description */}
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-muted-foreground text-center leading-relaxed">
+          <div className="max-w-3xl mx-auto px-4">
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground text-center leading-relaxed">
               I am a fifth-semester Computer Science student focused on web development.
               I build modern, user-focused web applications while continuously improving my skills
               through hands-on projects and learning.
@@ -43,7 +43,7 @@ export function AboutSection() {
           </div>
 
           {/* Highlight Cards */}
-          <div className="grid md:grid-cols-3 gap-6 pt-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8">
             {highlights.map((highlight, index) => (
               <Card
                 key={index}

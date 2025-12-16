@@ -32,17 +32,17 @@ export function Navigation() {
         isScrolled ? "glass-card border-b border-primary/20" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold text-primary hover:text-primary/80 transition-colors neon-text"
+            className="text-lg sm:text-xl font-bold text-primary hover:text-primary/80 transition-colors neon-text"
           >
             {"<codeJoel/>"}
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
             <button
               onClick={() => scrollToSection("about")}
               className="text-sm text-muted-foreground hover:text-primary transition-colors relative group"

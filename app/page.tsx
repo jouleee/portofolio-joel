@@ -10,8 +10,8 @@ import { Navigation } from "@/components/navigation"
 export default function Page() {
   return (
     <main className="min-h-screen gradient-bg relative overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="relative z-10">
+      <div className="absolute inset-0 grid-pattern opacity-20 sm:opacity-30" />
+      <div className="relative z-10 overflow-x-hidden">
         <Navigation />
         <HeroSection />
         <AboutSection />

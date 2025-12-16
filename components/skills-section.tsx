@@ -55,17 +55,17 @@ export function SkillsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="skills" className="py-24 px-4 relative">
+    <section ref={sectionRef} id="skills" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_oklch(0.2_0.1_265_/_0.15),_transparent_70%)]" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-balance">Skills & Technologies</h2>
+        <div className="space-y-8 sm:space-y-10 lg:space-y-12">
+          <div className="text-center space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Skills & Technologies</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {skillCategories.map((category, index) => (
               <Card key={index} className="p-6 glass-card hover:neon-border transition-all duration-300 group">
                 <h3 className="text-xl font-semibold mb-6 text-primary group-hover:neon-text transition-all duration-300">

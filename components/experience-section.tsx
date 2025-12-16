@@ -66,19 +66,19 @@ export function ExperienceSection() {
   }, [])
 
   return (
-    <section id="experience" className="py-20 px-4 relative" ref={sectionRef}>
+    <section id="experience" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative" ref={sectionRef}>
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold">Work Experience</h2>
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Work Experience</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
             My professional journey in web development and software engineering
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent" />
+          <div className="absolute left-4 sm:left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -91,54 +91,54 @@ export function ExperienceSection() {
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className={`flex flex-col md:flex-row gap-8 items-start ${
+                <div className={`flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 items-start ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}>
                   {/* Timeline dot */}
-                  <div className="absolute left-8 md:left-1/2 -translate-x-1/2 mt-6">
+                  <div className="absolute left-4 sm:left-8 md:left-1/2 md:-translate-x-1/2 mt-6">
                     <div className="relative">
-                      <div className="w-4 h-4 rounded-full bg-primary ring-4 ring-background animate-pulse" />
+                      <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-primary ring-4 ring-background animate-pulse" />
                       <div className="absolute inset-0 w-4 h-4 rounded-full bg-primary/20 animate-ping" />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                    <Card className="p-6 glass-card hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group border-primary/20 hover:neon-border">
-                      <div className="space-y-4">
+                  <div className={`w-full md:w-1/2 pl-8 sm:pl-12 md:pl-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
+                    <Card className="p-4 sm:p-6 glass-card hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group border-primary/20 hover:neon-border">
+                      <div className="space-y-3 sm:space-y-4">
                         <div>
-                          <div className="flex items-start gap-2 mb-2 md:justify-end">
-                            <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                          <div className={`flex items-start gap-2 mb-2 flex-wrap ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                            <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm">
                               {exp.type}
                             </Badge>
                           </div>
-                          <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
+                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold group-hover:text-primary transition-colors break-words">
                             {exp.title}
                           </h3>
-                          <p className="text-lg text-primary font-semibold mt-1">{exp.company}</p>
+                          <p className="text-base sm:text-lg text-primary font-semibold mt-1 break-words">{exp.company}</p>
                         </div>
 
-                        <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-                          <div className="flex items-center gap-2 md:justify-end">
-                            <Calendar className="w-4 h-4" />
+                        <div className={`flex flex-col gap-2 text-xs sm:text-sm text-muted-foreground ${index % 2 === 0 ? "md:items-end" : ""}`}>
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                             <span>{exp.period}</span>
                           </div>
-                          <div className="flex items-center gap-2 md:justify-end">
-                            <MapPin className="w-4 h-4" />
-                            <span>{exp.location}</span>
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                            <span className="break-words">{exp.location}</span>
                           </div>
                         </div>
 
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                           {exp.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-2 md:justify-end">
+                        <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                           {exp.technologies.map((tech) => (
                             <Badge
                               key={tech}
                               variant="outline"
-                              className="bg-background/50 hover:bg-primary/10 hover:border-primary/40 transition-colors"
+                              className="bg-background/50 hover:bg-primary/10 hover:border-primary/40 transition-colors text-xs"
                             >
                               {tech}
                             </Badge>

@@ -29,14 +29,14 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-4 pt-16 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden">
       <div className="hero-gradient absolute inset-0" />
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e510_1px,transparent_1px),linear-gradient(to_bottom,#4f46e510_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black_40%,transparent_100%)]" />
 
       <div className="container mx-auto relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <div className="relative w-64 h-64 mx-auto perspective-1000">
+        <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto perspective-1000">
             <div
               className="relative w-full h-full transition-all duration-300 ease-out"
               style={{
@@ -114,15 +114,18 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance neon-text">My Name is Joel</h1>
-            <p className="text-xl md:text-2xl text-muted-foreground">
-              <span className="text-primary font-semibold">Computer Science Student</span> |
-              <span className="text-accent font-semibold"> Web & Software Developer</span>
+          <div className="space-y-3 sm:space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-balance neon-text px-2">
+              My Name is Joel
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground px-2">
+              <span className="text-primary font-semibold">Computer Science Student</span>
+              <span className="hidden sm:inline"> | </span>
+              <span className="block sm:inline text-accent font-semibold">Web & Software Developer</span>
             </p>
           </div>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed px-4">
             I’m passionate about crafting modern web applications that deliver both performance and great user experience.
           </p>
 
