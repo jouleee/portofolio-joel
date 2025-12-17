@@ -1,8 +1,15 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Code2, Lightbulb, Zap, Sparkles } from "lucide-react"
+import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 
 export function AboutSection() {
+  const titleReveal = useScrollReveal({ delay: 0 })
+  const descReveal = useScrollReveal({ delay: 200 })
+  const { ref: cardsRef, visibleItems } = useStaggeredReveal(3, 80)
+  const skillsReveal = useScrollReveal({ delay: 100 })
   const highlights = [
     {
       icon: Code2,
@@ -28,13 +35,21 @@ export function AboutSection() {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {/* Section Title */}
-          <div className="text-center space-y-3 sm:space-y-4">
+          <div 
+            ref={titleReveal.ref}
+            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            suppressHydrationWarning
+          >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">About Me</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
           </div>
 
           {/* Main Description */}
-          <div className="max-w-3xl mx-auto px-4">
+          <div 
+            ref={descReveal.ref}
+            className={`max-w-3xl mx-auto px-4 ${descReveal.isVisible ? 'reveal-blur' : 'opacity-0'}`}
+            suppressHydrationWarning
+          >
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground text-center leading-relaxed">
               I am a fifth-semester Computer Science student focused on web development.
               I build modern, user-focused web applications while continuously improving my skills
@@ -43,11 +58,14 @@ export function AboutSection() {
           </div>
 
           {/* Highlight Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8">
+          <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8" suppressHydrationWarning>
             {highlights.map((highlight, index) => (
               <Card
                 key={index}
-                className="p-6 glass-card hover:neon-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 group"
+                className={`p-6 glass-card hover:neon-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 group ${
+                  visibleItems.has(index) ? 'reveal-scale' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className="space-y-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all duration-300">
@@ -63,7 +81,11 @@ export function AboutSection() {
           </div>
 
           {/* Soft Skills */}
-          <div className="pt-8 space-y-6">
+          <div 
+            ref={skillsReveal.ref}
+            className={`pt-8 space-y-6 ${skillsReveal.isVisible ? 'reveal-from-bottom' : 'opacity-0'}`}
+            suppressHydrationWarning
+          >
             <div className="flex items-center gap-3">
               <Sparkles className="h-5 w-5 text-accent" />
               <h3 className="text-2xl font-bold">Soft Skills</h3>

@@ -357,3 +357,196 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Scroll Reveal Animations with smooth spring-like easing */
+@keyframes reveal-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes reveal-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes reveal-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes reveal-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes reveal-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) rotateZ(-2deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.95) rotateZ(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateZ(0deg);
+  }
+}
+
+@keyframes reveal-blur {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(7px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes reveal-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Ultra smooth cubic-bezier easing for buttery animations */
+.reveal-from-bottom {
+  animation: reveal-from-bottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
+}
+
+.reveal-from-top {
+  animation: reveal-from-top 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
+}
+
+.reveal-from-left {
+  animation: reveal-from-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
+}
+
+.reveal-from-right {
+  animation: reveal-from-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
+}
+
+.reveal-scale {
+  animation: reveal-scale 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
+}
+
+.reveal-blur {
+  animation: reveal-blur 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: filter, opacity, transform;
+  animation-fill-mode: both;
+}
+
+.reveal-fade {
+  animation: reveal-fade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: opacity;
+  animation-fill-mode: both;
+}
+
+/* Ultra smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+}
+
+/* Parallax effect helper with smoother transition */
+.parallax {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Enhanced hover lift effect with smooth spring */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth card transitions */
+.glass-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow, border-color;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}

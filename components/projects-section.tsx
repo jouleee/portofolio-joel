@@ -3,8 +3,13 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
+import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 
 export function ProjectsSection() {
+  const titleReveal = useScrollReveal({ delay: 0 })
+  const { ref: softwareRef, visibleItems: softwareVisible } = useStaggeredReveal(3, 80)
+  const { ref: designRef, visibleItems: designVisible } = useStaggeredReveal(2, 80)
+  const { ref: aiRef, visibleItems: aiVisible } = useStaggeredReveal(2, 80)
   const softwareProjects = [
     {
       title: "E-Commerce Platform",
@@ -116,7 +121,11 @@ export function ProjectsSection() {
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="space-y-12 sm:space-y-16 lg:space-y-20">
           {/* Header */}
-          <div className="text-center space-y-3 sm:space-y-4">
+          <div 
+            ref={titleReveal.ref}
+            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            suppressHydrationWarning
+          >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Featured Projects</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
@@ -130,9 +139,15 @@ export function ProjectsSection() {
               <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-primary to-transparent rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]" />
               <p className="text-sm sm:text-base text-muted-foreground">Full-stack web applications and scalable solutions</p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div ref={softwareRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" suppressHydrationWarning>
               {softwareProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
+                <div 
+                  key={index}
+                  className={softwareVisible.has(index) ? 'reveal-from-bottom' : 'opacity-0'}
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  <ProjectCard project={project} />
+                </div>
               ))}
             </div>
           </div>
@@ -143,9 +158,15 @@ export function ProjectsSection() {
               <div className="w-16 h-0.5 bg-gradient-to-r from-secondary to-transparent rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
               <p className="text-muted-foreground">UI/UX focused projects with modern interfaces</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div ref={designRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" suppressHydrationWarning>
               {designProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
+                <div 
+                  key={index}
+                  className={designVisible.has(index) ? 'reveal-from-left' : 'opacity-0'}
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  <ProjectCard project={project} />
+                </div>
               ))}
             </div>
           </div>
@@ -156,9 +177,15 @@ export function ProjectsSection() {
               <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent rounded-full shadow-[0_0_10px_rgba(14,165,233,0.5)]" />
               <p className="text-muted-foreground">Intelligent systems and data-driven applications</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div ref={aiRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" suppressHydrationWarning>
               {aiProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
+                <div 
+                  key={index}
+                  className={aiVisible.has(index) ? 'reveal-from-right' : 'opacity-0'}
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  <ProjectCard project={project} />
+                </div>
               ))}
             </div>
           </div>

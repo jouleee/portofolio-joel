@@ -8,8 +8,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Github, InstagramIcon, Linkedin, Mail, Send } from "lucide-react"
+import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 
 export function ContactSection() {
+  const titleReveal = useScrollReveal({ delay: 0 })
+  const formReveal = useScrollReveal({ delay: 200 })
+  const { ref: socialsRef, visibleItems } = useStaggeredReveal(3, 100)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -50,7 +54,11 @@ export function ContactSection() {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {/* Section Title */}
-          <div className="text-center space-y-3 sm:space-y-4">
+          <div 
+            ref={titleReveal.ref}
+            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            suppressHydrationWarning
+          >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Get In Touch</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
@@ -60,7 +68,11 @@ export function ContactSection() {
 
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
             {/* Contact Form */}
-            <Card className="p-8 glass-card neon-border">
+            <Card 
+              ref={formReveal.ref}
+              className={`p-8 glass-card neon-border ${formReveal.isVisible ? 'reveal-from-left' : 'opacity-0'}`}
+              suppressHydrationWarning
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
@@ -115,18 +127,21 @@ export function ContactSection() {
 
             {/* Social Links */}
             <div className="space-y-6">
-              <div>
+              <div className={formReveal.isVisible ? 'reveal-from-right' : 'opacity-0'}>
                 <h3 className="text-2xl font-semibold mb-6">Connect With Me</h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   Feel free to reach out through any of these platforms. I typically respond within 24 hours.
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div ref={socialsRef} className="space-y-4" suppressHydrationWarning>
                 {socialLinks.map((link, index) => (
                   <Card
                     key={index}
-                    className="p-4 glass-card hover:neon-border transition-all duration-300 group cursor-pointer"
+                    className={`p-4 glass-card hover:neon-border transition-all duration-300 group cursor-pointer ${
+                      visibleItems.has(index) ? 'reveal-from-right' : 'opacity-0'
+                    }`}
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all duration-300">

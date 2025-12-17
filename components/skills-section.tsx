@@ -2,10 +2,13 @@
 
 import { Card } from "@/components/ui/card"
 import { useEffect, useRef, useState } from "react"
+import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 
 export function SkillsSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
+  const titleReveal = useScrollReveal({ delay: 0 })
+  const { ref: categoriesRef, visibleItems } = useStaggeredReveal(3, 80)
 
   const skillCategories = [
     {
@@ -60,14 +63,24 @@ export function SkillsSection() {
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
-          <div className="text-center space-y-3 sm:space-y-4">
+          <div 
+            ref={titleReveal.ref}
+            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            suppressHydrationWarning
+          >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Skills & Technologies</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div ref={categoriesRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" suppressHydrationWarning>
             {skillCategories.map((category, index) => (
-              <Card key={index} className="p-6 glass-card hover:neon-border transition-all duration-300 group">
+              <Card 
+                key={index} 
+                className={`p-6 glass-card hover:neon-border transition-all duration-300 group ${
+                  visibleItems.has(index) ? 'reveal-scale' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
                 <h3 className="text-xl font-semibold mb-6 text-primary group-hover:neon-text transition-all duration-300">
                   {category.category}
                 </h3>
