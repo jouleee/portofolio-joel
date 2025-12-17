@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Users, Award, Calendar } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 export function OrganizationSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -12,91 +13,105 @@ export function OrganizationSection() {
   const organizations = [
     {
       role: "Head of Organization",
-      organization: "Keluarga Mahasiswa Komputer FPMIPA Universitas Pendidikan Indonesia",
-      period: "2025 - 2026",
-      description: "Led a team of 50+ members in organizing technical workshops, hackathons, and community events. Managed budget and collaborated with industry partners.",
+      organization: "Keluarga Mahasiswa Komputer FPMIPA Universitas Pendidikan Indonesia",      logo: "/LOGO KEMAKOM.png",      period: "2025 - 2026",
+      description: "Led the organization’s strategic direction, coordinated cross-division programs, and represented the association in institutional and external collaborations.",
       achievements: [
-        "Organized 5+ successful tech events",
-        "Increased member engagement by 60%",
-        "Secured partnerships with 3 tech companies",
+        "Led and coordinated 100+ active members across multiple divisions",
+        "Initiated and supervised academic, social, and technology-focused programs",
+        "Make system improvements that increased member engagement by 30%",
       ],
       icon: "🎯",
     },
     {
       role: "Staff for Interest and Talent Division",
       organization: "Keluarga Mahasiswa Komputer FPMIPA Universitas Pendidikan Indonesia",
+      logo: "/LOGO KEMAKOM.png",
       period: "2024 - 2025",
-      description: "Coordinated weekly coding sessions and mentored junior members. Organized inter-university programming competitions.",
+      description: "Social Media Manager for instagram account @dpmb.kemakom, creating engaging content and Designing promotional materials for events and activities.",
       achievements: [
-        "Mentored 30+ students",
-        "Hosted 2 inter-university competitions",
-        "Published 20+ tutorial articles",
+        "Increased social media engagement by 40%",
+        "Produced 20+ high-quality posts and stories",
+        "Create seasonal bulletin to give information about organization activities",
       ],
       icon: "💻",
     },
     {
       role: "Staff for Interest and Talent Division",
       organization: "Keluarga Mahasiswa FPMIPA Universitas Pendidikan Indonesia",
+      logo: "/logo fpmipa.png",
       period: "2024 - 2025",
-      description: "Managed logistics and coordinated with speakers for annual tech conference with 500+ attendees.",
+      description: "PIC for Liga Mahasiswa FPMIPA (MIPA League) event, coordinating logistics, team registrations, and match schedules.",
       achievements: [
-        "Coordinated 20+ speakers",
-        "Managed event budget of $10,000",
-        "Achieved 95% attendee satisfaction",
+        "Successfully organized a tournament with 11 participating teams for basketball and futsal",
+        "Preparing Athlete Training Sessions for FPMIPA delegation in Pekan Olahraga dan Seni Mahasiswa UPI 2024",
       ],
       icon: "🎪",
     },
     {
       role: "Vice Chair of the Organizing Committee",
       organization: "A-Storia : Annual Event by Computer Science Class of 2023",
+      logo: "/Logo A-Storia.png",
       period: "2023",
-      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      description: "Assisted the Chair in coordinating the organizing committee, overseeing event preparation, and ensuring smooth execution of the annual cohort event.",
       achievements: [
-        "Contributed to 10+ projects",
-        "Fixed 50+ issues",
-        "Helped onboard new contributors",
+        "Successfully manageded committee of 160+ members (Computer Science class of 2023)",
+        "Ensured event timeline and operational readiness",
       ],
       icon: "🌟",
     },
     {
       role: "Head of Supervisory Commission",
       organization: "Majelis Perwakilan Kelas SMAN 1 Cisaat",
+      logo: "/logo mpk.png",
       period: "2022",
-      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      description: "Led the supervisory commission in monitoring organizational performance and ensuring accountability of executive bodies.",
       achievements: [
-        "Contributed to 10+ projects",
-        "Fixed 50+ issues",
-        "Helped onboard new contributors",
+        "Designed Monitoring and Evaluation System for student organization activities",
+        "Conducted performance reviews for Information and Communication Division",
+        "Making Majelis Perwakilan Kelas SMAN 1 Cisaat Logo as identity of the organization",
+      ],
+      icon: "🌟",
+    },
+    {
+      role: "Staff of Creative Division",
+      organization: "Smancis In Game, Music, Academy, and Art. (SIGMAA) SMAN 1 Cisaat",
+      logo: "/Logo SIGMAA.svg",
+      period: "2022",
+      description: "Member of the creative division responsible for social media management, content creation, and event promotion.",
+      achievements: [
+        "Co-directed and produced the live-streamed Grand Opening and Closing Ceremonies of the SIGMAA event.",
+        "Managed @officialsigmaa social media accounts",
       ],
       icon: "🌟",
     },
     {
       role: "Treasurer",
       organization: "Gerakan Pramuka SMAN 1 Cisaat",
+      logo: "/logo pramuka sman1 cisaat.svg",
       period: "2022",
-      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      description: "Managed financial administration, budgeting, and accountability for scouting activities and events.",
       achievements: [
-        "Contributed to 10+ projects",
-        "Fixed 50+ issues",
-        "Helped onboard new contributors",
+        "Maintained transparent routine financial records",
+        "Prepared budgets for routine and special activities",
       ],
       icon: "🌟",
     },
     {
       role: "Head of Information and Communication Division",
       organization: "Organisasi Siswa Intra Sekolah SMPN 1 Cisaat",
+      logo: "/Logo SMPN 1 Cisaat.svg",
       period: "2018",
-      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
+      description: "Led the information and communication division in managing documentation and Designing promotional materials for school events.",
       achievements: [
-        "Contributed to 10+ projects",
-        "Fixed 50+ issues",
-        "Helped onboard new contributors",
+        "Managed event documentation and information dissemination",
+        "Designed promotional materials for school events using CorelDRAW",
       ],
       icon: "🌟",
     },
     {
       role: "Secretary",
       organization: "Gerakan Pramuka SMPN 1 Cisaat",
+      logo: "/logo pramuka smpn 1 cisaat.svg",
       period: "2018",
       description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
       achievements: [
@@ -148,15 +163,27 @@ export function OrganizationSection() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 text-6xl sm:text-8xl opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                {org.icon}
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-20 h-20 sm:w-24 sm:h-24 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                <Image
+                  src={org.logo}
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
               </div>
 
               <div className="relative space-y-3 sm:space-y-4">
                 <div className="flex items-start justify-between gap-2 sm:gap-4">
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start gap-2 mb-2 flex-wrap">
-                      <span className="text-2xl sm:text-3xl">{org.icon}</span>
+                    <div className="flex items-center gap-3 mb-3 flex-wrap">
+                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-lg overflow-hidden p-1.5 shadow-md border bg-white border-border/30">
+                        <Image
+                          src={org.logo}
+                          alt={`${org.organization} logo`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                       <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm">
                         <Users className="w-3 h-3 mr-1" />
                         <span className="break-words">{org.role}</span>

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Briefcase, Calendar, MapPin } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 export function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -13,6 +14,7 @@ export function ExperienceSection() {
     {
       title: "Freelance Web Developer",
       company: "Codifyve",
+      logo: "/LOGO CODIFYVE.svg",
       location: "Bandung, Indonesia",
       period: "Oct 2025 - Present",
       description: "Developed backend and full-stack solutions for client projects, including a CBTsystem using Laravel and an interactive exhibition website using PHP.",
@@ -22,15 +24,17 @@ export function ExperienceSection() {
     {
       title: "Assistant for Object Oriented Design and Programming Practicum",
       company: "Universitas Pendidikan Indonesia",
+      logo: "/Logo_Almamater_UPI.svg (1).png",
       location: "Bandung, Indonesia",
       period: "Aug 2023 - Present",
       description: "Assisted students in understanding Object-Oriented Programming concepts through weekly practicum sessions using Java, Python, C++, and PHP.",
       technologies: ["Java", "Python", "PHP", "C++", "OOP", "Teaching & Mentoring"],
-      type: "Internship",
+      type: "Part Time",
     },
     {
       title: "Assistant for Algorithm and Data Structure Practicum",
       company: "Universitas Pendidikan Indonesia",
+      logo: "/Logo_Almamater_UPI.svg (1).png",
       location: "Bandung, Indonesia",
       period: "Jan 2025 - Aug 2025",
       description: "Led practicum sessions for Data Structures and Algorithms, including module preparation, assignments, and student evaluations.",
@@ -40,6 +44,7 @@ export function ExperienceSection() {
     {
       title: "Assistant for Fundamentals Programming Practicum",
       company: "Universitas Pendidikan Indonesia",
+      logo: "/Logo_Almamater_UPI.svg (1).png",
       location: "Bandung, Indonesia",
       period: "Aug 2024 - Jan 2025",
       description: "Supported first-semester students in learning basic programming concepts through guided practice sessions.",
@@ -107,7 +112,19 @@ export function ExperienceSection() {
                     <Card className="p-4 sm:p-6 glass-card hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group border-primary/20 hover:neon-border">
                       <div className="space-y-3 sm:space-y-4">
                         <div>
-                          <div className={`flex items-start gap-2 mb-2 flex-wrap ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                          <div className={`flex items-center gap-3 mb-3 flex-wrap ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                            <div className={`relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-lg overflow-hidden p-1.5 shadow-md border ${
+                              exp.company === "Codifyve" 
+                                ? "bg-card/50 backdrop-blur-sm border-border/50" 
+                                : "bg-white border-border/30"
+                            }`}>
+                              <Image
+                                src={exp.logo}
+                                alt={`${exp.company} logo`}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
                             <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs sm:text-sm">
                               {exp.type}
                             </Badge>
