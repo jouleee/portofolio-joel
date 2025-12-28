@@ -74,7 +74,7 @@ export function ExperienceSection() {
     <section id="experience" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative" ref={sectionRef}>
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Work Experience</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Experience</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
           <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
             My professional journey in web development and software engineering

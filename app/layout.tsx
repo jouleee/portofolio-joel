@@ -17,9 +17,8 @@ const bebasNeue = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: "Portfolio | Computer Science Student",
+  title: "Joel's Portfolio | Software Developer & Computer Science Student",
   description: "Personal portfolio showcasing web development projects and technical skills",
-  generator: "v0.app",
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -28,20 +27,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: "/apple-icon.png",
+    apple: "/favicon.ico",
   },
 }
 

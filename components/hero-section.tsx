@@ -8,6 +8,8 @@ import Image from "next/image"
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [currentRole, setCurrentRole] = useState(0)
+  const roles = ["Web Developer", "Software Developer", "Mobile Developer"]
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -19,6 +21,13 @@ export function HeroSection() {
 
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length)
+    }, 3000)
+    return () => clearInterval(interval)
   }, [])
 
   const scrollToProjects = () => {
@@ -116,13 +125,16 @@ export function HeroSection() {
 
           <div className="space-y-3 sm:space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-balance neon-text px-2">
-              My Name is Joel
+              Hi There, I'm Joel
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground px-2">
-              <span className="text-primary font-semibold">Computer Science Student</span>
-              <span className="hidden sm:inline"> | </span>
-              <span className="block sm:inline text-accent font-semibold">Web & Software Developer</span>
-            </p>
+            <div className="space-y-3 px-2">
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold flex items-baseline justify-center whitespace-nowrap">
+                <span className="text-foreground">I'm&nbsp;a&nbsp;</span>
+                <span className="text-accent inline-block animate-fade-in-up" key={currentRole}>
+                  {roles[currentRole]}
+                </span>
+              </div>
+            </div>
           </div>
 
           <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed px-4">

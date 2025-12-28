@@ -84,43 +84,6 @@ export function OrganizationSection() {
       ],
       icon: "🌟",
     },
-    {
-      role: "Treasurer",
-      organization: "Gerakan Pramuka SMAN 1 Cisaat",
-      logo: "/logo pramuka sman1 cisaat.svg",
-      period: "2022",
-      description: "Managed financial administration, budgeting, and accountability for scouting activities and events.",
-      achievements: [
-        "Maintained transparent routine financial records",
-        "Prepared budgets for routine and special activities",
-      ],
-      icon: "🌟",
-    },
-    {
-      role: "Head of Information and Communication Division",
-      organization: "Organisasi Siswa Intra Sekolah SMPN 1 Cisaat",
-      logo: "/Logo SMPN 1 Cisaat.svg",
-      period: "2018",
-      description: "Led the information and communication division in managing documentation and Designing promotional materials for school events.",
-      achievements: [
-        "Managed event documentation and information dissemination",
-        "Designed promotional materials for school events using CorelDRAW",
-      ],
-      icon: "🌟",
-    },
-    {
-      role: "Secretary",
-      organization: "Gerakan Pramuka SMPN 1 Cisaat",
-      logo: "/logo pramuka smpn 1 cisaat.svg",
-      period: "2018",
-      description: "Active contributor to open source projects. Participated in code reviews and documentation improvements.",
-      achievements: [
-        "Contributed to 10+ projects",
-        "Fixed 50+ issues",
-        "Helped onboard new contributors",
-      ],
-      icon: "🌟",
-    },
   ]
 
   useEffect(() => {
