@@ -6,10 +6,10 @@ import { Code2, Lightbulb, Zap, Sparkles } from "lucide-react"
 import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 
 export function AboutSection() {
-  const titleReveal = useScrollReveal({ delay: 0 })
-  const descReveal = useScrollReveal({ delay: 200 })
+  const titleReveal = useScrollReveal({ delay: 0, triggerOnce: false })
+  const descReveal = useScrollReveal({ delay: 100, triggerOnce: false })
   const { ref: cardsRef, visibleItems } = useStaggeredReveal(3, 80)
-  const skillsReveal = useScrollReveal({ delay: 100 })
+  const skillsReveal = useScrollReveal({ delay: 50, triggerOnce: false })
   const highlights = [
     {
       icon: Code2,
@@ -37,7 +37,13 @@ export function AboutSection() {
           {/* Section Title */}
           <div 
             ref={titleReveal.ref}
-            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            className={`text-center space-y-3 sm:space-y-4 ${
+              titleReveal.isVisible 
+                ? titleReveal.scrollDirection === 'down' 
+                  ? 'reveal-from-bottom' 
+                  : 'reveal-from-top'
+                : 'opacity-0'
+            }`}
             suppressHydrationWarning
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">About Me</h2>
@@ -47,7 +53,13 @@ export function AboutSection() {
           {/* Main Description */}
           <div 
             ref={descReveal.ref}
-            className={`max-w-3xl mx-auto px-4 ${descReveal.isVisible ? 'reveal-blur' : 'opacity-0'}`}
+            className={`max-w-3xl mx-auto px-4 ${
+              descReveal.isVisible 
+                ? descReveal.scrollDirection === 'down' 
+                  ? 'reveal-from-bottom' 
+                  : 'reveal-from-top'
+                : 'opacity-0'
+            }`}
             suppressHydrationWarning
           >
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground text-center leading-relaxed">
@@ -83,7 +95,13 @@ export function AboutSection() {
           {/* Soft Skills */}
           <div 
             ref={skillsReveal.ref}
-            className={`pt-8 space-y-6 ${skillsReveal.isVisible ? 'reveal-from-bottom' : 'opacity-0'}`}
+            className={`pt-8 space-y-6 ${
+              skillsReveal.isVisible 
+                ? skillsReveal.scrollDirection === 'down' 
+                  ? 'reveal-from-bottom' 
+                  : 'reveal-from-top'
+                : 'opacity-0'
+            }`}
             suppressHydrationWarning
           >
             <div className="flex items-center gap-3">

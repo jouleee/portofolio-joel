@@ -153,6 +153,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => window.open('https://drive.google.com/file/d/1qCZsteaBkHk57bcptutgdviUoEK0ZNYS/view?usp=sharing', '_blank')}
               className="border-primary/40 hover:bg-primary/10 min-w-[160px] glass-card hover:border-primary/60 transition-all duration-300 bg-transparent"
             >
               <Download className="mr-2 h-4 w-4" />

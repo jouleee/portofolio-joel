@@ -6,32 +6,72 @@ import { ExternalLink, Github } from "lucide-react"
 import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 
 export function ProjectsSection() {
-  const titleReveal = useScrollReveal({ delay: 0 })
-  const { ref: softwareRef, visibleItems: softwareVisible } = useStaggeredReveal(3, 80)
+  const titleReveal = useScrollReveal({ delay: 0, triggerOnce: false })
+  const { ref: softwareRef, visibleItems: softwareVisible } = useStaggeredReveal(8, 80)
   const { ref: designRef, visibleItems: designVisible } = useStaggeredReveal(2, 80)
   const { ref: aiRef, visibleItems: aiVisible } = useStaggeredReveal(2, 80)
   const softwareProjects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with cart management, payment integration, and admin dashboard.",
-      tags: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-      image: "/modern-ecommerce-website.png",
+      title: "AtapBumi – Outdoor Gear Rental Mobile App",
+      description: "Mobile application for outdoor equipment rental built with Flutter and Laravel. Enables users to browse gear, place rental orders, and manage transactions through a full-stack architecture with RESTful APIs.",
+      tags: ["Flutter", "Laravel", "REST API", "MySQL"],
+      image: "/placeholder.svg",
       demoUrl: "#",
       repoUrl: "#",
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates, team features, and analytics.",
-      tags: ["React", "Express", "MongoDB", "Socket.io"],
-      image: "/task-management-dashboard.png",
+      title: "BEM KEMAKOM Announcement Website",
+      description: "Lightweight announcement website developed in one night to meet urgent organizational needs. Designed for fast access, clear information delivery, and responsive interaction without database dependency.",
+      tags: ["HTML", "JavaScript"],
+      image: "/placeholder.svg",
       demoUrl: "#",
       repoUrl: "#",
     },
     {
-      title: "Social Media Clone",
-      description: "Full-featured social platform with posts, comments, likes, and user authentication.",
-      tags: ["Next.js", "Laravel", "MySQL", "Redis"],
-      image: "/social-media-feed.jpg",
+      title: "Bus Ticket Reservation Platform (MERN Stack)",
+      description: "Web-based reservation platform backend enabling route management, scheduling, and ticket booking. Designed with scalable REST APIs and structured NoSQL data models for reliable transaction flows.",
+      tags: ["Node.js", "Express.js", "MongoDB", "React", "Next.js"],
+      image: "/placeholder.svg",
+      demoUrl: "#",
+      repoUrl: "#",
+    },
+    {
+      title: "Cilimus Badminton Booking System (Cilminton)",
+      description: "Web-based booking system and DBMS design for managing sports facility reservations. Provides booking forms, schedule management, and user reservation tracking.",
+      tags: ["MySQL", "PHP", "HTML", "CSS", "JavaScript"],
+      image: "/placeholder.svg",
+      demoUrl: "#",
+      repoUrl: "#",
+    },
+    {
+      title: "Computer-Based Test (CBT) System – Physics Festival",
+      description: "Backend system for academic competition testing, handling question banks, participants, test sessions, and result recapitulation through Laravel REST APIs.",
+      tags: ["Laravel", "REST API"],
+      image: "/placeholder.svg",
+      demoUrl: "#",
+      repoUrl: "#",
+    },
+    {
+      title: "OpenLab Status Tracker – FPMIPA UPI",
+      description: "Real-time dashboard system for monitoring laboratory availability during OpenLab events. Displays live status updates, summary statistics, and last-updated indicators for operational transparency.",
+      tags: ["Laravel"],
+      image: "/placeholder.svg",
+      demoUrl: "#",
+      repoUrl: "#",
+    },
+    {
+      title: "Parabot Ulin – Outdoor Gear Rental Website",
+      description: "Web-based outdoor equipment rental platform that supports booking, availability tracking, returns, and payment monitoring, designed to streamline rental operations.",
+      tags: ["Laravel", "DBMS"],
+      image: "/placeholder.svg",
+      demoUrl: "#",
+      repoUrl: "#",
+    },
+    {
+      title: "bersekolah.com – Scholarship Management Platform",
+      description: "Production-ready scholarship website developed in collaboration with a real foundation. Provides scholarship information, registration, and admin management with a modern, accessible UI.",
+      tags: ["Astro", "React", "TypeScript", "shadcn/ui"],
+      image: "/placeholder.svg",
       demoUrl: "#",
       repoUrl: "#",
     },
@@ -123,7 +163,13 @@ export function ProjectsSection() {
           {/* Header */}
           <div 
             ref={titleReveal.ref}
-            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            className={`text-center space-y-3 sm:space-y-4 ${
+              titleReveal.isVisible 
+                ? titleReveal.scrollDirection === 'down' 
+                  ? 'reveal-from-bottom' 
+                  : 'reveal-from-top'
+                : 'opacity-0'
+            }`}
             suppressHydrationWarning
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Featured Projects</h2>

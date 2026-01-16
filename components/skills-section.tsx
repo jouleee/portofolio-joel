@@ -7,7 +7,7 @@ import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 export function SkillsSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
-  const titleReveal = useScrollReveal({ delay: 0 })
+  const titleReveal = useScrollReveal({ delay: 0, triggerOnce: false })
   const { ref: categoriesRef, visibleItems } = useStaggeredReveal(3, 80)
 
   const skillCategories = [
@@ -45,6 +45,8 @@ export function SkillsSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+        } else {
+          setIsVisible(false)
         }
       },
       { threshold: 0.2 },
@@ -65,7 +67,13 @@ export function SkillsSection() {
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           <div 
             ref={titleReveal.ref}
-            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            className={`text-center space-y-3 sm:space-y-4 ${
+              titleReveal.isVisible 
+                ? titleReveal.scrollDirection === 'down' 
+                  ? 'reveal-from-bottom' 
+                  : 'reveal-from-top'
+                : 'opacity-0'
+            }`}
             suppressHydrationWarning
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Skills & Technologies</h2>

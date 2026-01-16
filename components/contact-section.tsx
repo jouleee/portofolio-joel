@@ -11,8 +11,8 @@ import { Github, InstagramIcon, Linkedin, Mail, Send } from "lucide-react"
 import { useScrollReveal, useStaggeredReveal } from "@/hooks/use-scroll-reveal"
 
 export function ContactSection() {
-  const titleReveal = useScrollReveal({ delay: 0 })
-  const formReveal = useScrollReveal({ delay: 200 })
+  const titleReveal = useScrollReveal({ delay: 0, triggerOnce: false })
+  const formReveal = useScrollReveal({ delay: 100, triggerOnce: false })
   const { ref: socialsRef, visibleItems } = useStaggeredReveal(3, 100)
   const [formData, setFormData] = useState({
     name: "",
@@ -56,7 +56,13 @@ export function ContactSection() {
           {/* Section Title */}
           <div 
             ref={titleReveal.ref}
-            className={`text-center space-y-3 sm:space-y-4 ${titleReveal.isVisible ? 'reveal-from-top' : 'opacity-0'}`}
+            className={`text-center space-y-3 sm:space-y-4 ${
+              titleReveal.isVisible 
+                ? titleReveal.scrollDirection === 'down' 
+                  ? 'reveal-from-bottom' 
+                  : 'reveal-from-top'
+                : 'opacity-0'
+            }`}
             suppressHydrationWarning
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Get In Touch</h2>
@@ -70,7 +76,13 @@ export function ContactSection() {
             {/* Contact Form */}
             <Card 
               ref={formReveal.ref}
-              className={`p-8 glass-card neon-border ${formReveal.isVisible ? 'reveal-from-left' : 'opacity-0'}`}
+              className={`p-8 glass-card neon-border ${
+                formReveal.isVisible 
+                  ? formReveal.scrollDirection === 'down' 
+                    ? 'reveal-from-left' 
+                    : 'reveal-from-right'
+                  : 'opacity-0'
+              }`}
               suppressHydrationWarning
             >
               <form onSubmit={handleSubmit} className="space-y-6">

@@ -58,6 +58,8 @@ export function ExperienceSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+        } else {
+          setIsVisible(false)
         }
       },
       { threshold: 0.1 },
