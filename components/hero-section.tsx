@@ -9,7 +9,7 @@ export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [currentRole, setCurrentRole] = useState(0)
-  const roles = ["Web Developer", "Software Developer", "Mobile Developer"]
+  const roles = ["Software Developer", "Fullstack Developer", "Backend Engineer"]
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -41,7 +41,7 @@ export function HeroSection() {
     <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden">
       <div className="hero-gradient absolute inset-0" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e510_1px,transparent_1px),linear-gradient(to_bottom,#4f46e510_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black_40%,transparent_100%)]" />
+      <div className="absolute inset-0 hero-pattern" />
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -148,7 +148,7 @@ export function HeroSection() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[160px] relative overflow-hidden group"
             >
               <span className="relative z-10">View My Work</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+              <div className="absolute inset-0 btn-shimmer" />
             </Button>
             <Button
               size="lg"

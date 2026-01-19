@@ -23,7 +23,7 @@ export function ProjectsSection() {
       title: "BEM KEMAKOM Announcement Website",
       description: "Lightweight announcement website developed in one night to meet urgent organizational needs. Designed for fast access, clear information delivery, and responsive interaction without database dependency.",
       tags: ["HTML", "JavaScript"],
-      image: "/placeholder.svg",
+      image: "/bemkemakom.png",
       demoUrl: "#",
       repoUrl: "#",
     },
@@ -31,7 +31,7 @@ export function ProjectsSection() {
       title: "Bus Ticket Reservation Platform (MERN Stack)",
       description: "Web-based reservation platform backend enabling route management, scheduling, and ticket booking. Designed with scalable REST APIs and structured NoSQL data models for reliable transaction flows.",
       tags: ["Node.js", "Express.js", "MongoDB", "React", "Next.js"],
-      image: "/placeholder.svg",
+      image: "/bismilah.png",
       demoUrl: "#",
       repoUrl: "#",
     },
@@ -39,7 +39,7 @@ export function ProjectsSection() {
       title: "Cilimus Badminton Booking System (Cilminton)",
       description: "Web-based booking system and DBMS design for managing sports facility reservations. Provides booking forms, schedule management, and user reservation tracking.",
       tags: ["MySQL", "PHP", "HTML", "CSS", "JavaScript"],
-      image: "/placeholder.svg",
+      image: "/cilminton.png",
       demoUrl: "#",
       repoUrl: "#",
     },
@@ -47,7 +47,7 @@ export function ProjectsSection() {
       title: "Computer-Based Test (CBT) System – Physics Festival",
       description: "Backend system for academic competition testing, handling question banks, participants, test sessions, and result recapitulation through Laravel REST APIs.",
       tags: ["Laravel", "REST API"],
-      image: "/placeholder.svg",
+      image: "/phyfest.png",
       demoUrl: "#",
       repoUrl: "#",
     },
@@ -55,7 +55,7 @@ export function ProjectsSection() {
       title: "OpenLab Status Tracker – FPMIPA UPI",
       description: "Real-time dashboard system for monitoring laboratory availability during OpenLab events. Displays live status updates, summary statistics, and last-updated indicators for operational transparency.",
       tags: ["Laravel"],
-      image: "/placeholder.svg",
+      image: "/openlab.png",
       demoUrl: "#",
       repoUrl: "#",
     },
@@ -71,7 +71,7 @@ export function ProjectsSection() {
       title: "bersekolah.com – Scholarship Management Platform",
       description: "Production-ready scholarship website developed in collaboration with a real foundation. Provides scholarship information, registration, and admin management with a modern, accessible UI.",
       tags: ["Astro", "React", "TypeScript", "shadcn/ui"],
-      image: "/placeholder.svg",
+      image: "/bersekolah.png",
       demoUrl: "#",
       repoUrl: "#",
     },
@@ -116,35 +116,24 @@ export function ProjectsSection() {
   ]
 
   const ProjectCard = ({ project }: { project: (typeof softwareProjects)[0] }) => (
-    <Card className="overflow-hidden glass-card hover:neon-border transition-all duration-300 group relative">
+    <Card className="overflow-hidden glass-card">
       <div className="relative h-40 sm:h-48 overflow-hidden bg-secondary/20">
         <img
           src={project.image || "/placeholder.svg"}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent opacity-60" />
-        <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
-          <Button size="sm" className="glass-card border-primary/40 hover:border-primary/60 hover:bg-primary/20">
-            <ExternalLink className="h-4 w-4 mr-2" />
-            Demo
-          </Button>
-          <Button size="sm" className="glass-card border-primary/40 hover:border-primary/60 hover:bg-primary/20">
-            <Github className="h-4 w-4 mr-2" />
-            Code
-          </Button>
-        </div>
       </div>
 
       <div className="p-6 space-y-4">
-        <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
+        <h3 className="text-xl font-semibold">{project.title}</h3>
         <p className="text-muted-foreground leading-relaxed">{project.description}</p>
 
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag, tagIndex) => (
             <span
               key={tagIndex}
-              className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-primary/10 to-secondary/10 text-primary rounded-full border border-primary/20 hover:border-primary/40 transition-colors"
+              className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-primary/10 to-secondary/10 text-primary rounded-full border border-primary/20"
             >
               {tag}
             </span>
@@ -173,7 +162,7 @@ export function ProjectsSection() {
             suppressHydrationWarning
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Featured Projects</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
+            <div className="w-20 h-1 accent-divider mx-auto" />
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
               A curated collection of my work across software development, design, and AI/ML domains.
             </p>
@@ -182,7 +171,7 @@ export function ProjectsSection() {
           <div className="space-y-6 sm:space-y-8">
             <div className="space-y-2 sm:space-y-3">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary">Software</h3>
-              <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-primary to-transparent rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]" />
+              <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-primary to-transparent rounded-full" />
               <p className="text-sm sm:text-base text-muted-foreground">Full-stack web applications and scalable solutions</p>
             </div>
             <div ref={softwareRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" suppressHydrationWarning>
@@ -201,7 +190,7 @@ export function ProjectsSection() {
           <div className="space-y-8">
             <div className="space-y-3">
               <h3 className="text-2xl md:text-3xl font-bold text-secondary">Design</h3>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-secondary to-transparent rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
+              <div className="w-16 h-0.5 bg-gradient-to-r from-secondary to-transparent rounded-full" />
               <p className="text-muted-foreground">UI/UX focused projects with modern interfaces</p>
             </div>
             <div ref={designRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" suppressHydrationWarning>
@@ -220,7 +209,7 @@ export function ProjectsSection() {
           <div className="space-y-8">
             <div className="space-y-3">
               <h3 className="text-2xl md:text-3xl font-bold text-accent">AI, ML, & Data</h3>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent rounded-full shadow-[0_0_10px_rgba(14,165,233,0.5)]" />
+              <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent rounded-full" />
               <p className="text-muted-foreground">Intelligent systems and data-driven applications</p>
             </div>
             <div ref={aiRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" suppressHydrationWarning>

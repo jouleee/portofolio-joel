@@ -66,7 +66,7 @@ export function ContactSection() {
             suppressHydrationWarning
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">Get In Touch</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
+            <div className="w-20 h-1 accent-divider mx-auto" />
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
             </p>
@@ -132,7 +132,7 @@ export function ContactSection() {
                     <Send className="mr-2 h-4 w-4" />
                     Send Message
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                  <div className="absolute inset-0 btn-shimmer" />
                 </Button>
               </form>
             </Card>
@@ -156,7 +156,7 @@ export function ContactSection() {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all duration-300">
+                      <div className="w-12 h-12 rounded-lg icon-glow flex items-center justify-center">
                         <link.icon className="h-6 w-6 text-primary" />
                       </div>
                       <div className="flex-1">

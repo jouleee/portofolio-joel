@@ -77,7 +77,7 @@ export function ExperienceSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Experience</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
+          <div className="w-20 h-1 accent-divider mx-auto" />
           <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
             My professional journey in web development and software engineering
           </p>

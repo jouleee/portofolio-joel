@@ -30,7 +30,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/10 to-transparent" />
+      <div className="absolute inset-0 gradient-overlay-secondary" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
@@ -47,7 +47,7 @@ export function AboutSection() {
             suppressHydrationWarning
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">About Me</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]" />
+            <div className="w-20 h-1 accent-divider mx-auto" />
           </div>
 
           {/* Main Description */}
@@ -80,7 +80,7 @@ export function AboutSection() {
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all duration-300">
+                  <div className="w-12 h-12 rounded-lg icon-glow flex items-center justify-center">
                     <highlight.icon className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
