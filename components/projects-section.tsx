@@ -63,7 +63,7 @@ export function ProjectsSection() {
       title: "Parabot Ulin – Outdoor Gear Rental Website",
       description: "Web-based outdoor equipment rental platform that supports booking, availability tracking, returns, and payment monitoring, designed to streamline rental operations.",
       tags: ["Laravel", "DBMS"],
-      image: "/placeholder.svg",
+      image: "/parabotulin.png",
       demoUrl: "#",
       repoUrl: "#",
     },
