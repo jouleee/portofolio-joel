@@ -49,7 +49,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_oklch(0.2_0.12_265_/_0.2),_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_oklch(0.95_0.05_265_/_0.3),_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,_oklch(0.2_0.12_265_/_0.2),_transparent_50%)]" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
