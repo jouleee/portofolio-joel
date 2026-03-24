@@ -10,8 +10,8 @@ const outfit = Outfit({ subsets: ["latin"], display: "swap" });
 const projects = [
   {
     title: "Bersekolah",
-    description: "An integrated portal for student management and scalable online learning infrastructure.",
-    techList: ["Next.js", "Tailwind", "TypeScript"],
+    description: "Production-ready scholarship website developed in collaboration with a real foundation. Provides scholarship information, registration, and admin management with a modern, accessible UI.",
+    techList: ["Astro", "TypeScript", "React.js"],
     image: "/projects/bersekolah.png",
   },
   {
@@ -30,6 +30,24 @@ const projects = [
     title: "Parabotulin",
     description: "Creative agency landing page featuring advanced WebGL interactions and smooth scrolling.",
     techList: ["Svelte", "WebGL", "GSAP"],
+    image: "/projects/parabotulin.png",
+  },
+  {
+    title: "Kemakom Announcement Website",
+    description: "Lightweight announcement website developed in one night to meet urgent organizational needs. Designed for fast access, clear information delivery, and responsive interaction without database dependency.",
+    techList: ["HTML", "CSS", "JavaScript"],
+    image: "/projects/parabotulin.png",
+  },
+  {
+    title: "OpenLab FPMIPA UPI",
+    description: "Real-time dashboard system for monitoring laboratory availability during OpenLab events. Displays live status updates, summary statistics, and last-updated indicators for operational transparency.",
+    techList: ["Laravel", "MySQL"],
+    image: "/projects/parabotulin.png",
+  },
+  {
+    title: "Bus Ticket Reservation",
+    description: "Web-based reservation platform backend enabling route management, scheduling, and ticket booking. Designed with scalable REST APIs and structured NoSQL data models for reliable transaction flows.",
+    techList: ["MongoDB", "Express.js", "React.js", "Next.js"],
     image: "/projects/parabotulin.png",
   },
 ];

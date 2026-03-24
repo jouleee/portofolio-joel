@@ -9,7 +9,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Joel - Creative Developer",
+  title: "Julian Portofolio's",
   description: "Portfolio of Joel, a Creative Developer specializing in Next.js, Motion, and advanced web interactions.",
 };
 
